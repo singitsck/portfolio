@@ -210,3 +210,14 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
 });
+
+/*==================== SKILLS BAR WIDTH ====================*/
+document.addEventListener("DOMContentLoaded", function() {
+  const skillsData = document.querySelectorAll('.skills__data');
+  skillsData.forEach(skill => {
+    const percentageElement = skill.querySelector('.skills__number');
+    const percentage = percentageElement.textContent.trim();
+    const bar = skill.querySelector('.skills__percentage');
+    bar.style.width = percentage;
+  });
+});
