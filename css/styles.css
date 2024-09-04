@@ -308,7 +308,9 @@ img {
 }
 
 .home__blob-img {
-  width: 220px;
+  /* width: 220px; */
+  width: 200px;
+  height: auto;
 }
 
 .home__data {
@@ -712,12 +714,15 @@ img {
 }
 
 .portfolio__img {
-  width: 265px;
+  /* width: 265px; */
+  width: 100px;
+  height: auto;
   border-radius: 0.5rem;
-  justify-self: center;
+  justify-self: left;
 }
 
 .portfolio__title {
+  display: block;
   font-size: var(--h3-font-size);
   margin-bottom: var(--mb-0-5);
 }
@@ -1080,6 +1085,13 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .portfolio__YouTube {
+    column-gap: 5rem;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center; /* 垂直置中 */
+    justify-content: center; /* 水平置中 */
+  }
+
   .qualification__sections {
     display: grid;
     grid-template-columns: 0.6fr;
@@ -1151,6 +1163,9 @@ img {
     .home__scroll-button {
       margin-left: 3rem;
     }
+    .about__data {
+      justify-content: center;
+    }
     .about__container {
       column-gap: 5rem;
     }
@@ -1193,8 +1208,20 @@ img {
     .portfolio__img {
       width: 320px;
     }
+    .small-img {
+      width: 50%; /* 設定圖像寬度為原來的50% */
+      height: auto; /* 自動調整高度以保持比例 */
+      display: flex; 
+      flex-direction: column;
+      /* justify-content: space-between; */
+    }
+    .video-container iframe {
+      width: 230%; 
+      height: 450px;
+    }
     .portfolio__content {
-      align-items: center;
+      align-items: center; /* 垂直置中 */
+      justify-content: center; /* 水平置中 */
     }
     .project {
       text-align: initial;
