@@ -737,7 +737,7 @@ img {
   display: block;
   font-size: var(--h3-font-size);
   margin-bottom: var(--mb-0-5);
-  grid-column: 1 / -1; /* 跨越所有列 */
+  grid-column: 1 / -1 !important; /* 跨越所有列，使用 !important */
 }
 
 .portfolio__description {
