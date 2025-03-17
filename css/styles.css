@@ -1034,9 +1034,6 @@ img {
     justify-content: center;
   }
 
-  .services__content {
-    padding-right: 3.5rem;
-  }
   .services__modal {
     padding: 0 0.5rem;
   }
@@ -1093,7 +1090,7 @@ img {
   }
 
   .qualification__sections {
-    display: grid;
+    display: flex;
     grid-template-columns: 0.6fr;
     justify-content: center;
   }
@@ -1197,9 +1194,6 @@ img {
     }
     .services__icon {
       font-size: 2rem;
-    }
-    .services__content {
-      padding: 6rem 0 2rem 2.5rem;
     }
 
     .services__modal-content {
