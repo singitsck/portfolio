@@ -707,28 +707,42 @@ img {
 /*==================== PORTFOLIO ====================*/
 .portfolio__container {
   overflow: initial;
+  width: auto; /* 設置寬度為自動 */
+  height: auto; /* 設置高度為自動 */
 }
 
 .portfolio__content {
   padding: 0 1.5rem;
 }
 
+.image-container {
+  display: flex;
+  flex-direction: column; /* 垂直排列子元素 */
+  align-items: center; /* 水平置中子元素 */
+}
+
+.portfolio__description {
+  text-align: center; /* 使描述文本居中 */
+  margin-top: 0.5rem; /* 添加描述文本的上邊距 */
+}
+
 .portfolio__img {
-  /* width: 265px; */
-  width: 100px;
-  height: auto;
-  border-radius: 0.5rem;
-  justify-self: left;
+  width: 100%; /* 設置圖片寬度為父容器的 100% */
+  height: auto; /* 保持圖片比例 */
+  max-width: 90%; /* 設置圖片最大寬度為父容器的 48% */
+  border-radius: 0.5rem; /* 圓角邊框 */
 }
 
 .portfolio__title {
   display: block;
   font-size: var(--h3-font-size);
   margin-bottom: var(--mb-0-5);
+  grid-column: 1 / -1; /* 跨越所有列 */
 }
 
 .portfolio__description {
-  margin-bottom: var(--mb-0-75);
+  text-align: center; /* 使描述文本居中 */
+  margin-top: 0.5rem; /* 添加描述文本的上邊距 */
 }
 
 .portfolio__button:hover .button__icon {
@@ -1079,7 +1093,7 @@ img {
   .project__container,
   .contact__container,
   .footer__container {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);  /* 創建兩列，寬度空間1 */
   }
 
   .portfolio__YouTube {
@@ -1198,9 +1212,6 @@ img {
 
     .services__modal-content {
       width: 450px;
-    }
-    .portfolio__img {
-      width: 320px;
     }
     .small-img {
       width: 50%; /* 設定圖像寬度為原來的50% */
