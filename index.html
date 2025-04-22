@@ -904,6 +904,14 @@
 
     <!--==================== MAIN JS ====================-->
     <script src="./js/main.js"></script>
+
+    <script>
+        // Send a request to track the visit
+        fetch("/track-visit")
+          .then((response) => response.text())
+          .then((data) => console.log(data))
+          .catch((error) => console.error("Error tracking visit:", error));
+    </script>
 </body>
 
 </html>
