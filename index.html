@@ -22,27 +22,12 @@
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          
-          // 設置 Cookie 同意狀態（預設為拒絕，直到用戶同意）
-          gtag('consent', 'default', {
-            'analytics_storage': 'denied',
-            'ad_storage': 'denied',
-            'wait_for_update': 500,
-          });
-          
           gtag('config', 'G-L0Z5QM5TZD', {
             // 匿名化 IP 地址（符合 GDPR 要求）
             'anonymize_ip': true,
             // 設置 Cookie 過期時間（秒）- 2年
             'cookie_expires': 63072000,
           });
-          
-          // 如果用戶之前已經同意，立即啟用 Analytics
-          if (localStorage.getItem('cookieConsent') === 'accepted') {
-            gtag('consent', 'update', {
-              'analytics_storage': 'granted'
-            });
-          }
         </script>
 
         <title>singitPortfolio</title>
@@ -224,6 +209,15 @@
 
                                <i class="uil uil-angle-down skills__arrow"></i>
                             </div>
+                            <div class="skills__data">
+                                <div class="skills__titles">
+                                    <h3 class="skills__name">TypeScript</h3>
+                                    <span class="skills__number">60%</span>
+                                </div>
+                                <div class="skills__bar">
+                                    <span class="skills__percentage"></span>
+                                </div>
+                            </div>
                             <div class="skills__list grid">
                                 <div class="skills__data">
                                     <div class="skills__titles">
@@ -252,15 +246,6 @@
                                        <span class="skills__percentage"></span>
                                    </div>
                                </div>
-                               <!-- <div class="skills__data">
-                                   <div class="skills__titles">
-                                       <h3 class="skills__name">TypeScript</h3>
-                                       <span class="skills__number">20%</span>
-                                   </div>
-                                   <div class="skills__bar">
-                                       <span class="skills__percentage"></span>
-                                   </div>
-                               </div> -->
                             </div>
                         </div>
                          <!--==================== SKILLS 2 ====================-->
@@ -304,8 +289,8 @@
                                 </div>
                                <div class="skills__data">
                                     <div class="skills__titles">
-                                      <h3 class="skills__name">Google suite</h3>
-                                      <span class="skills__number">90%</span>
+                                      <h3 class="skills__name">Flutter</h3>
+                                      <span class="skills__number">40%</span>
                                     </div>
                                     <div class="skills__bar">
                                        <span class="skills__percentage"></span>
@@ -313,8 +298,8 @@
                                 </div>
                                 <div class="skills__data">
                                    <div class="skills__titles">
-                                       <h3 class="skills__name">MS Office</h3>
-                                       <span class="skills__number">70%</span>
+                                       <h3 class="skills__name">Flask</h3>
+                                       <span class="skills__number">30%</span>
                                    </div>
                                    <div class="skills__bar">
                                        <span class="skills__percentage"></span>
@@ -330,8 +315,8 @@
                             <div class="skills__header">
                                <i class="uil uil-brackets-curly skills__icon"></i>
                                <div>
-                                   <h1 class="skills__title">Web Developer</h1>
-                                   <span class="skills__subtitle">More than 3 years</span>
+                                   <h1 class="skills__title">Developer</h1>
+                                   <span class="skills__subtitle">More than 4 years</span>
                                </div>
 
                                <i class="uil uil-angle-down skills__arrow"></i>
@@ -339,7 +324,7 @@
                             <div class="skills__list grid">
                                 <div class="skills__data">
                                     <div class="skills__titles">
-                                        <h3 class="skills__name">HTML</h3>
+                                        <h3 class="skills__name">HTML & CSS & Tailwind</h3>
                                         <span class="skills__number">70%</span>
                                     </div>
                                     <div class="skills__bar">
@@ -348,7 +333,7 @@
                                 </div>
                                <div class="skills__data">
                                    <div class="skills__titles">
-                                       <h3 class="skills__name">CSS</h3>
+                                       <h3 class="skills__name">Bootstrap</h3>
                                        <span class="skills__number">60%</span>
                                    </div>
                                    <div class="skills__bar">
@@ -357,7 +342,7 @@
                                </div>
                                <div class="skills__data">
                                    <div class="skills__titles">
-                                       <h3 class="skills__name">JavaScript</h3>
+                                       <h3 class="skills__name">JavaScript & jQuery</h3>
                                        <span class="skills__number">40%</span>
                                    </div>
                                    <div class="skills__bar">
@@ -366,13 +351,49 @@
                                </div>
                                <div class="skills__data">
                                    <div class="skills__titles">
-                                       <h3 class="skills__name">TypeScript</h3>
+                                       <h3 class="skills__name">React</h3>
                                        <span class="skills__number">30%</span>
                                    </div>
                                    <div class="skills__bar">
                                        <span class="skills__percentage"></span>
                                    </div>
                                </div>
+                               <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <h3 class="skills__name">MySQL</h3>
+                                        <span class="skills__number">50%</span>
+                                    </div>
+                                    <div class="skills__bar">
+                                        <span class="skills__percentage"></span>
+                                    </div>
+                                </div>
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <h3 class="skills__name">Git & GitHub</h3>
+                                        <span class="skills__number">50%</span>
+                                    </div>
+                                    <div class="skills__bar">
+                                        <span class="skills__percentage"></span>
+                                    </div>
+                                </div>
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <h3 class="skills__name">Docker</h3>
+                                        <span class="skills__number">40%</span>
+                                    </div>
+                                    <div class="skills__bar">
+                                        <span class="skills__percentage"></span>
+                                    </div>
+                                </div>
+                                <div class="skills__data">
+                                    <div class="skills__titles">
+                                        <h3 class="skills__name">Ionic</h3>
+                                        <span class="skills__number">40%</span>
+                                    </div>
+                                    <div class="skills__bar">
+                                        <span class="skills__percentage"></span>
+                                    </div>
+                                </div>
                            </div>
                        </div>
                     </div>
@@ -474,7 +495,7 @@
                         </div>
 
                         <!--==================== QUALIFICATION 2 ====================--> 
-                        <!-- <div class="qualification__data">
+                        <div class="qualification__data">
                             <div></div>
                             <div>
                                 <span class="qualification__rounder"></span>
@@ -482,15 +503,15 @@
                             </div>
 
                             <div>
-                                <h3 class="qualification__title">Internship</h3>
-                                <span class="qualification__subtitle">EVI Services Limited</span>
+                                <h3 class="qualification__title">Software Developer</h3>
+                                <span class="qualification__subtitle">DragonRise IOT Limited</span>
                                 <div class="qualification__calendar">
                                     <i class="uil uil-calendar-alt"></i>
-                                    2021
+                                    2025 - Now
                                 </div>
                             </div>
 
-                        </div> -->
+                        </div>
                         
                     </div> 
                </div>
@@ -506,7 +527,7 @@
         <!--==================== SERVICES 1 ====================-->  
         <div class="services__content">
             <div>
-                <i class="uil uil-arrow skills__icon"></i>
+                <i class="uil uil-browser skills__icon"></i>
                 <h3 class="services__title">Front End<br></h3>
             </div>
             <span class="button button--flex button--small button--link services__button">
@@ -522,22 +543,22 @@
                     <ul class="services__modal-services grid">
                         <li class="services__modal-service">
                             <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Experience in Ionic and React.</p>
+                            <p>Proficiency in HTML, CSS, Tailwind CSS, and Bootstrap for responsive web design.</p>
                         </li>
 
                         <li class="services__modal-service">
                             <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Proficiency in Front End languages.</p>
+                            <p>Experience with JavaScript, jQuery, React, and TypeScript for interactive front-end development.</p>
                         </li>
 
                         <li class="services__modal-service">
                             <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Systematically applying statistical and logical techniques.</p>
+                            <p>Building responsive and user-friendly web interfaces with modern frameworks.</p>
                         </li>
 
                         <li class="services__modal-service">
                             <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Visualizing graphs and charts and preparing reports and dashboards.</p>
+                            <p>Version control with Git and GitHub for collaborative development.</p>
                         </li>
                     </ul>
                 </div>
@@ -547,8 +568,8 @@
         <!--==================== SERVICES 2 ====================--> 
         <div class="services__content">
             <div>
-                <i class="uil uil-desktop skills__icon"></i>
-                <h3 class="services__title">IT Support<br> </h3>
+                <i class="uil uil-code-branch skills__icon"></i>
+                <h3 class="services__title">Backend & Mobile<br> </h3>
             </div>
             <span class="button button--flex button--small button--link services__button">
                 View more
@@ -557,29 +578,28 @@
 
             <div class="services__modal">
                 <div class="services__modal-content">
-                    <h4 class="services__modal-title">IT Support<br></h4>
+                    <h4 class="services__modal-title">Backend & Mobile Development<br></h4>
                     <i class="uil uil-times services__modal-close"></i>
 
                     <ul class="services__modal-services grid">
                         <li class="services__modal-service">
                             <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>With strong skills in IT management, 
-                                PC installation, and network maintenance</p>
+                            <p>Backend development with Python, C#, Java, and Flask framework.</p>
                         </li>
 
                         <li class="services__modal-service">
                             <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Maintain customer accounts and help resolve disputes.</p>
+                            <p>Database design and management with MySQL.</p>
                         </li>
 
                         <li class="services__modal-service">
                             <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Provide technical support and troubleshooting assistance.</p>
+                            <p>Mobile app development using Flutter for cross-platform applications.</p>
                         </li>
 
                         <li class="services__modal-service">
                             <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Systematically applying statistical and logical techniques.</p>
+                            <p>Containerization and deployment with Docker for scalable applications.</p>
                         </li>
                     </ul>
                 </div>
@@ -605,14 +625,23 @@
                     <ul class="services__modal-services grid">
                         <li class="services__modal-service">
                             <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Deployed llama and deepseek mode locally with ollama. </p>
+                            <p>Deployed Llama and DeepSeek models locally with Ollama for AI inference.</p>
                         </li>
 
                         <li class="services__modal-service">
                             <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Deployed ComfyUI and stable-diffusion-webui locally for AI creation.</p>
+                            <p>Experience with Stable Diffusion (60% proficiency) for AI image generation.</p>
                         </li>
 
+                        <li class="services__modal-service">
+                            <i class="uil uil-check-circle services__modal-icon"></i>
+                            <p>Deployed ComfyUI and stable-diffusion-webui locally for AI content creation.</p>
+                        </li>
+
+                        <li class="services__modal-service">
+                            <i class="uil uil-check-circle services__modal-icon"></i>
+                            <p>Game development experience with Unity for 2D mobile games.</p>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -908,7 +937,6 @@
             <div class="footer__container container grid">
                 <div>
                     <h1 class="footer__title">singit</h1>
-                    <span class="footer__subtitle" id="visit-count">Visit Count: 0</span>
                 </div>
 
                 <ul class="footer__links">
@@ -951,16 +979,6 @@
 
     <!--==================== MAIN JS ====================-->
     <script src="./js/main.js"></script>
-
-    <!--==================== Visit Count ====================-->
-    <script>
-        // Increment visit count in localStorage
-        const visitCount = localStorage.getItem("visitCount") || 0;
-        localStorage.setItem("visitCount", parseInt(visitCount) + 1);
-      
-        // Update the visit count on the page
-        document.getElementById("visit-count").textContent = `Visit Count: ${localStorage.getItem("visitCount")}`;
-      </script>
 </body>
 
 </html>

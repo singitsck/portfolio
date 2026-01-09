@@ -429,79 +429,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Cookie 同意彈窗處理
+  // Cookie 同意彈窗處理（已禁用 - 默認接受 Cookies）
+  // 如果需要重新啟用 Cookie 同意彈窗，請取消以下註釋並修改 index.html 中的 consent default 設置
+  /*
   const cookieConsent = document.getElementById('cookie-consent');
   const cookieAccept = document.getElementById('cookie-accept');
   const cookieDecline = document.getElementById('cookie-decline');
-
-  // 檢查用戶是否已經做出選擇
-  const cookieConsentGiven = localStorage.getItem('cookieConsent');
-  
-  if (!cookieConsentGiven && cookieConsent) {
-    // 如果用戶還沒有選擇，顯示彈窗
-    setTimeout(() => {
-      cookieConsent.style.display = 'block';
-      setTimeout(() => {
-        cookieConsent.classList.add('show');
-      }, 10);
-    }, 1000); // 延遲 1 秒顯示，給用戶時間看到網站
-  }
-
-  // 接受 Cookies
-  if (cookieAccept) {
-    cookieAccept.addEventListener('click', function() {
-      localStorage.setItem('cookieConsent', 'accepted');
-      hideCookieBanner();
-      
-      // 重新啟用 Google Analytics（如果之前被禁用）
-      if (typeof gtag !== 'undefined') {
-        gtag('consent', 'update', {
-          'analytics_storage': 'granted'
-        });
-      }
-      
-      // 追蹤同意事件
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'cookie_consent', {
-          'event_category': 'Privacy',
-          'event_label': 'Accepted',
-          'transport_type': 'beacon'
-        });
-      }
-    });
-  }
-
-  // 拒絕 Cookies
-  if (cookieDecline) {
-    cookieDecline.addEventListener('click', function() {
-      localStorage.setItem('cookieConsent', 'declined');
-      hideCookieBanner();
-      
-      // 禁用 Google Analytics
-      if (typeof gtag !== 'undefined') {
-        gtag('consent', 'update', {
-          'analytics_storage': 'denied'
-        });
-      }
-      
-      // 追蹤拒絕事件（使用本地存儲，不發送到 GA）
-      console.log('User declined cookies. Analytics disabled.');
-    });
-  }
-
-  function hideCookieBanner() {
-    if (cookieConsent) {
-      cookieConsent.classList.remove('show');
-      setTimeout(() => {
-        cookieConsent.style.display = 'none';
-      }, 300);
-    }
-  }
-
-  // 如果用戶之前拒絕了 Cookies，禁用 Analytics
-  if (cookieConsentGiven === 'declined' && typeof gtag !== 'undefined') {
-    gtag('consent', 'update', {
-      'analytics_storage': 'denied'
-    });
-  }
+  */
 });
