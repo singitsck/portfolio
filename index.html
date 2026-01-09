@@ -3,6 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Siu Chun Kit - Computer Science Graduate portfolio. Showcasing skills in Full Stack Development, IT Support, and Generative AI R&D.">
+        <meta name="keywords" content="portfolio, computer science, web development, AI, React, Python">
 
         <!--==================== UNICONS ====================-->
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -13,9 +15,53 @@
         <!--==================== CSS ====================-->
         <link rel="stylesheet" href="./css/styles.css">
 
+        <!--==================== GOOGLE ANALYTICS 4 ====================-->
+        <!-- Google Analytics 4 測量 ID: G-L0Z5QM5TZD -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-L0Z5QM5TZD"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          
+          // 設置 Cookie 同意狀態（預設為拒絕，直到用戶同意）
+          gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied',
+            'wait_for_update': 500,
+          });
+          
+          gtag('config', 'G-L0Z5QM5TZD', {
+            // 匿名化 IP 地址（符合 GDPR 要求）
+            'anonymize_ip': true,
+            // 設置 Cookie 過期時間（秒）- 2年
+            'cookie_expires': 63072000,
+          });
+          
+          // 如果用戶之前已經同意，立即啟用 Analytics
+          if (localStorage.getItem('cookieConsent') === 'accepted') {
+            gtag('consent', 'update', {
+              'analytics_storage': 'granted'
+            });
+          }
+        </script>
+
         <title>singitPortfolio</title>
     </head>
     <body>
+        <!--==================== COOKIE CONSENT BANNER (可選 - 符合 GDPR) ====================-->
+        <!-- 如果您的網站主要面向歐盟用戶，建議啟用此功能 -->
+        <div id="cookie-consent" class="cookie-consent" style="display: none;">
+            <div class="cookie-consent__content">
+                <p class="cookie-consent__text">
+                    本網站使用 Google Analytics 來分析訪客行為。我們會匿名收集數據以改善網站體驗。
+                    <a href="#privacy-policy" style="color: inherit; text-decoration: underline;">了解更多</a>
+                </p>
+                <div class="cookie-consent__buttons">
+                    <button id="cookie-accept" class="cookie-consent__button cookie-consent__button--accept">接受</button>
+                    <button id="cookie-decline" class="cookie-consent__button cookie-consent__button--decline">拒絕</button>
+                </div>
+            </div>
+        </div>
         <!--==================== HEADER ====================-->
         <header class="header" id="header">
             <nav class="nav container">
@@ -104,7 +150,7 @@
                         </div>
 
                         <div class="home__data">
-                            <h1 class="home__title">Hi, I'am</h1>
+                            <h1 class="home__title">Hi, I'm</h1>
                             <h1 class="home__title">Siu Chun Kit</h1>
                             <h3 class="home__subtitle">Computer Science Graduate</h3>
                             <p class="home__description">Graduate with Bachelor of Science with Honours in Computer Science in HKMU.
@@ -131,7 +177,7 @@
                 <span class="section__subtitle">My Introduction</span>
 
                 <div class="about__container container grid">
-                    <img src="images/69478063.png" alt="" class="about__img">
+                        <img src="images/69478063.png" alt="Siu Chun Kit Profile Picture" class="about__img">
                     <div class="about__data">
                         <p class="about__description">
                             Passionate about the IT industry, and will study related technologies by himself in his spare time
@@ -190,7 +236,7 @@
                                 </div>
                                <div class="skills__data">
                                    <div class="skills__titles">
-                                       <h3 class="skills__name">C##</h3>
+                                       <h3 class="skills__name">C#</h3>
                                        <span class="skills__number">40%</span>
                                    </div>
                                    <div class="skills__bar">
@@ -528,7 +574,7 @@
 
                         <li class="services__modal-service">
                             <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Refer customers to loan officers or other financial specialists.</p>
+                            <p>Provide technical support and troubleshooting assistance.</p>
                         </li>
 
                         <li class="services__modal-service">
@@ -628,11 +674,11 @@
                     <div class="portfolio__content grid swiper-slide" >
                         <h3 class="portfolio__title">AI drawing</h3>
                         <div class="portfolio__item">
-                            <img src="./images/00001-3405745367.jpg" alt="" class="portfolio__img">
+                            <img src="./images/00001-3405745367.jpg" alt="AI Generated Artwork using Stable Diffusion" class="portfolio__img">
                             <p class="portfolio__description">used Stable Diffusion to create.</p>
                         </div>
                         <div class="portfolio__item second-column">
-                            <img src="./images/azul_deusa_00173_.png" alt="" class="portfolio__img">
+                            <img src="./images/azul_deusa_00173_.png" alt="AI Generated Artwork using ComfyUI" class="portfolio__img">
                             <p class="portfolio__description">used ComfyUI to create.</p>
                         </div>
 
@@ -778,7 +824,7 @@
 
                         <div>
                             <h3 class="contact__title">Call me</h3>
-                            <span class="contatc__subtitle">(+852) 55430385</span>
+                            <a href="tel:+85255430385" class="contact__subtitle" style="color: inherit;">(+852) 55430385</a>
                         </div>
                     </div>
 
@@ -787,7 +833,7 @@
 
                         <div>
                             <h3 class="contact__title">E-mail</h3>
-                            <span class="contatc__subtitle">chunkitsiu@outlook.com</span>
+                            <a href="mailto:chunkitsiu@outlook.com" class="contact__subtitle" style="color: inherit;">chunkitsiu@outlook.com</a>
                         </div>
                     </div>
 
@@ -796,7 +842,7 @@
 
                         <div>
                             <h3 class="contact__title">Location</h3>
-                            <span class="contatc__subtitle">Hong Kong</span>
+                            <span class="contact__subtitle">Hong Kong</span>
                         </div>
                     </div>
 
@@ -805,7 +851,7 @@
 
                         <div>
                             <h3 class="contact__title">Discord</h3>
-                            <span class="contatc__subtitle">431506575836971020</span>
+                            <span class="contact__subtitle">singitsck (Discord ID: 431506575836971020)</span>
                         </div>
                     </div>
 
@@ -814,40 +860,40 @@
 
                         <div>
                             <h3 class="contact__title">LinkedIn & Jobsdb</h3>
-                            <span class="contatc__subtitle">www.linkedin.com/in/singitsck</span></n>
-                            <span class="contatc__subtitle">https://hk.jobsdb.com/profile/chunkit-siu-d6vTzZhQqN</span>
+                            <a href="https://www.linkedin.com/in/chun-kit-siu-b650a527b/" target="_blank" class="contact__subtitle" style="color: inherit; text-decoration: underline;">LinkedIn Profile</a><br>
+                            <a href="https://hk.jobsdb.com/profile/chunkit-siu-d6vTzZhQqN" target="_blank" class="contact__subtitle" style="color: inherit; text-decoration: underline;">JobsDB Profile</a>
                         </div>
                     </div>
                 </div>
 
-                <form action="" class="contact__form grid">
+                <form action="mailto:chunkitsiu@outlook.com" method="post" enctype="text/plain" class="contact__form grid" id="contact-form">
                     <div class="contact__inputs grid">
                         <div class="contact__content">
-                            <label for="" class="contact__label">Name</label>
-                            <input type="text" class="contact__input">
+                            <label for="contact-name" class="contact__label">Name</label>
+                            <input type="text" id="contact-name" name="name" class="contact__input" required>
                         </div>
 
                         <div class="contact__content">
-                            <label for="" class="contact__label">E-mail</label>
-                            <input type="email" class="contact__input">
+                            <label for="contact-email" class="contact__label">E-mail</label>
+                            <input type="email" id="contact-email" name="email" class="contact__input" required>
                         </div>
                     </div>
 
                     <div class="contact__content">
-                        <label for="" class="contact__label">Subject</label>
-                        <input type="text" class="contact__input">
+                        <label for="contact-subject" class="contact__label">Subject</label>
+                        <input type="text" id="contact-subject" name="subject" class="contact__input" required>
                     </div>
 
                     <div class="contact__content">
-                        <label for="" class="contact__label">Description</label>
-                        <textarea name="" id="" cols="0" rows="7" class="contact__input"></textarea>
+                        <label for="contact-message" class="contact__label">Description</label>
+                        <textarea name="message" id="contact-message" cols="0" rows="7" class="contact__input" required></textarea>
                     </div>
 
                     <div>
-                        <a href="#" class="button button--flex">
+                        <button type="submit" class="button button--flex">
                             Send message
                             <i class="uil uil-message button__icon"></i>
-                        </a>
+                        </button>
                     </div>
                 </form>
             </div>

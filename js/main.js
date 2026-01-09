@@ -221,3 +221,287 @@ document.addEventListener("DOMContentLoaded", function() {
     bar.style.width = percentage;
   });
 });
+
+/*==================== CONTACT FORM HANDLING ====================*/
+const contactForm = document.getElementById("contact-form");
+if (contactForm) {
+  contactForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(contactForm);
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const subject = formData.get("subject");
+    const message = formData.get("message");
+    
+    // Google Analytics: 追蹤表單提交
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'form_submit', {
+        'event_category': 'Contact',
+        'event_label': 'Contact Form',
+        'value': 1
+      });
+    }
+    
+    // Create mailto link with form data
+    const mailtoLink = `mailto:chunkitsiu@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Show success message (optional)
+    alert("正在開啟您的郵件客戶端...");
+    
+    // Reset form after a short delay
+    setTimeout(() => {
+      contactForm.reset();
+    }, 1000);
+  });
+}
+
+/*==================== GOOGLE ANALYTICS EVENT TRACKING ====================*/
+
+// 追蹤社交媒體連結點擊
+document.addEventListener('DOMContentLoaded', function() {
+  // 追蹤所有外部連結（社交媒體）
+  const socialLinks = document.querySelectorAll('.home__social-icon, .footer__social');
+  socialLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      const platform = this.href.includes('linkedin') ? 'LinkedIn' :
+                      this.href.includes('twitter') ? 'Twitter' :
+                      this.href.includes('github') ? 'GitHub' : 'Social Media';
+      
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'click', {
+          'event_category': 'Social Media',
+          'event_label': platform,
+          'transport_type': 'beacon'
+        });
+      }
+    });
+  });
+
+  // 追蹤導航連結點擊
+  const navLinks = document.querySelectorAll('.nav__link');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      const section = this.getAttribute('href');
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'navigation', {
+          'event_category': 'Navigation',
+          'event_label': section,
+          'transport_type': 'beacon'
+        });
+      }
+    });
+  });
+
+  // 追蹤 CV 下載
+  const cvLink = document.querySelector('a[href*="CV.pdf"]');
+  if (cvLink) {
+    cvLink.addEventListener('click', function() {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'file_download', {
+          'event_category': 'Downloads',
+          'event_label': 'CV.pdf',
+          'transport_type': 'beacon'
+        });
+      }
+    });
+  }
+
+  // 追蹤服務詳情查看
+  const serviceButtons = document.querySelectorAll('.services__button');
+  serviceButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const serviceTitle = this.closest('.services__content').querySelector('.services__title').textContent.trim();
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'view_service', {
+          'event_category': 'Services',
+          'event_label': serviceTitle,
+          'transport_type': 'beacon'
+        });
+      }
+    });
+  });
+
+  // 追蹤作品集互動
+  const portfolioItems = document.querySelectorAll('.portfolio__content, .portfolio__YouTube');
+  portfolioItems.forEach(item => {
+    const portfolioTitle = item.querySelector('.portfolio__title')?.textContent.trim() || 'Portfolio Item';
+    item.addEventListener('click', function(e) {
+      // 只在點擊圖片或標題時追蹤，避免重複
+      if (e.target.tagName === 'IMG' || e.target.tagName === 'H3') {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'view_portfolio', {
+            'event_category': 'Portfolio',
+            'event_label': portfolioTitle,
+            'transport_type': 'beacon'
+          });
+        }
+      }
+    });
+  });
+
+  // 追蹤主題切換
+  const themeButton = document.getElementById('theme-button');
+  if (themeButton) {
+    themeButton.addEventListener('click', function() {
+      const currentTheme = document.body.classList.contains('dark-theme') ? 'Dark' : 'Light';
+      const newTheme = currentTheme === 'Dark' ? 'Light' : 'Dark';
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'theme_change', {
+          'event_category': 'Settings',
+          'event_label': newTheme,
+          'transport_type': 'beacon'
+        });
+      }
+    });
+  }
+
+  // 追蹤滾動深度（當用戶滾動到 25%, 50%, 75%, 100%）
+  let scrollTracked = {
+    '25%': false,
+    '50%': false,
+    '75%': false,
+    '100%': false
+  };
+
+  window.addEventListener('scroll', function() {
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollPercent = Math.round((scrollTop / (documentHeight - windowHeight)) * 100);
+
+    // 追蹤滾動深度
+    if (scrollPercent >= 25 && !scrollTracked['25%']) {
+      scrollTracked['25%'] = true;
+      trackScrollDepth(25);
+    } else if (scrollPercent >= 50 && !scrollTracked['50%']) {
+      scrollTracked['50%'] = true;
+      trackScrollDepth(50);
+    } else if (scrollPercent >= 75 && !scrollTracked['75%']) {
+      scrollTracked['75%'] = true;
+      trackScrollDepth(75);
+    } else if (scrollPercent >= 100 && !scrollTracked['100%']) {
+      scrollTracked['100%'] = true;
+      trackScrollDepth(100);
+    }
+  });
+
+  function trackScrollDepth(percent) {
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'scroll', {
+        'event_category': 'Engagement',
+        'event_label': `Scroll Depth ${percent}%`,
+        'value': percent,
+        'transport_type': 'beacon'
+      });
+    }
+  }
+
+  // 追蹤頁面停留時間（當用戶離開頁面時）
+  let startTime = Date.now();
+  window.addEventListener('beforeunload', function() {
+    const timeSpent = Math.round((Date.now() - startTime) / 1000); // 秒
+    if (typeof gtag !== 'undefined' && timeSpent > 0) {
+      gtag('event', 'time_on_page', {
+        'event_category': 'Engagement',
+        'event_label': 'Time Spent',
+        'value': timeSpent,
+        'transport_type': 'beacon'
+      });
+    }
+  });
+
+  // 追蹤聯絡資訊點擊
+  const contactLinks = document.querySelectorAll('a[href^="tel:"], a[href^="mailto:"]');
+  contactLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      const contactType = this.href.startsWith('tel:') ? 'Phone' : 'Email';
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'contact_click', {
+          'event_category': 'Contact',
+          'event_label': contactType,
+          'transport_type': 'beacon'
+        });
+      }
+    });
+  });
+
+  // Cookie 同意彈窗處理
+  const cookieConsent = document.getElementById('cookie-consent');
+  const cookieAccept = document.getElementById('cookie-accept');
+  const cookieDecline = document.getElementById('cookie-decline');
+
+  // 檢查用戶是否已經做出選擇
+  const cookieConsentGiven = localStorage.getItem('cookieConsent');
+  
+  if (!cookieConsentGiven && cookieConsent) {
+    // 如果用戶還沒有選擇，顯示彈窗
+    setTimeout(() => {
+      cookieConsent.style.display = 'block';
+      setTimeout(() => {
+        cookieConsent.classList.add('show');
+      }, 10);
+    }, 1000); // 延遲 1 秒顯示，給用戶時間看到網站
+  }
+
+  // 接受 Cookies
+  if (cookieAccept) {
+    cookieAccept.addEventListener('click', function() {
+      localStorage.setItem('cookieConsent', 'accepted');
+      hideCookieBanner();
+      
+      // 重新啟用 Google Analytics（如果之前被禁用）
+      if (typeof gtag !== 'undefined') {
+        gtag('consent', 'update', {
+          'analytics_storage': 'granted'
+        });
+      }
+      
+      // 追蹤同意事件
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'cookie_consent', {
+          'event_category': 'Privacy',
+          'event_label': 'Accepted',
+          'transport_type': 'beacon'
+        });
+      }
+    });
+  }
+
+  // 拒絕 Cookies
+  if (cookieDecline) {
+    cookieDecline.addEventListener('click', function() {
+      localStorage.setItem('cookieConsent', 'declined');
+      hideCookieBanner();
+      
+      // 禁用 Google Analytics
+      if (typeof gtag !== 'undefined') {
+        gtag('consent', 'update', {
+          'analytics_storage': 'denied'
+        });
+      }
+      
+      // 追蹤拒絕事件（使用本地存儲，不發送到 GA）
+      console.log('User declined cookies. Analytics disabled.');
+    });
+  }
+
+  function hideCookieBanner() {
+    if (cookieConsent) {
+      cookieConsent.classList.remove('show');
+      setTimeout(() => {
+        cookieConsent.style.display = 'none';
+      }, 300);
+    }
+  }
+
+  // 如果用戶之前拒絕了 Cookies，禁用 Analytics
+  if (cookieConsentGiven === 'declined' && typeof gtag !== 'undefined') {
+    gtag('consent', 'update', {
+      'analytics_storage': 'denied'
+    });
+  }
+});
