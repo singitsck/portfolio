@@ -1392,3 +1392,18 @@ img {
     flex: 1;
   }
 }
+
+/*==================== TRAVEL NAV LINK HIGHLIGHT ====================*/
+.nav__link--highlight {
+  color: hsl(var(--hue-color), 69%, 61%);
+  font-weight: var(--font-semi-bold);
+}
+
+.nav__link--highlight:hover {
+  color: hsl(var(--hue-color), 69%, 50%);
+}
+
+/* Active state for travel link */
+.nav__link--highlight.active-link {
+  color: hsl(var(--hue-color), 69%, 61%);
+}
