@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="東京賞櫻之旅 2026 - 五天的櫻花季探索">
+    <title>東京賞櫻之旅 2026 | Travel Journal</title>
+    
+    <!--==================== UNICONS ====================-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    
+    <!--==================== LEAFLET CSS ====================-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+    
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../css/travel.css">
+    <link rel="stylesheet" href="css/trip-detail.css">
+    
+    <!--==================== GOOGLE FONTS ====================-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body class="trip-page">
+    <!--==================== HEADER ====================-->
+    <header class="header header-travel" id="header">
+        <nav class="nav container">
+            <a href="../" class="nav__logo nav__logo--travel">
+                <i class="uil uil-arrow-left"></i> BACK TO TRAVEL
+            </a>
+            <div class="nav__btns">
+                <i class="uil uil-moon change-theme" id="theme-button"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!--==================== HERO ====================-->
+    <section class="trip-hero trip-hero--sakura">
+        <div class="trip-hero__bg">
+            <img src="https://images.unsplash.com/photo-1522383225653-ed111181a951?w=1920" alt="Tokyo Sakura">
+            <div class="trip-hero__overlay trip-hero__overlay--sakura"></div>
+        </div>
+        <div class="trip-hero__content">
+            <div class="trip-hero__badge">
+                <i class="uil uil-calendar-alt"></i> 即將到來
+            </div>
+            <span class="trip-hero__season trip-hero__season--sakura"><i class="uil uil-flower"></i> 櫻花季</span>
+            <h1 class="trip-hero__title">東京賞櫻之旅</h1>
+            <span class="trip-hero__date">2026年4月3-7日 · 5天</span>
+            <p class="trip-hero__desc">探索上野的浪漫花道、新宿的多品種櫻花，以及橫濱的現代風情</p>
+        </div>
+    </section>
+
+    <!--==================== FLIGHT INFO ====================-->
+    <section class="section flight-section">
+        <div class="container">
+            <h2 class="section__title section__title--travel">✈️ 航班資訊</h2>
+            
+            <div class="flight-cards">
+                <div class="flight-card">
+                    <div class="flight-card__icon">✈️</div>
+                    <div class="flight-card__content">
+                        <h3 class="flight-card__title">去程 · UO652</h3>
+                        <div class="flight-card__route">
+                            <div class="flight-card__point">
+                                <span class="flight-card__time">15:10</span>
+                                <span class="flight-card__airport">香港 HKG</span>
+                            </div>
+                            <div class="flight-card__arrow">→</div>
+                            <div class="flight-card__point">
+                                <span class="flight-card__time">20:40</span>
+                                <span class="flight-card__airport">成田 NRT</span>
+                            </div>
+                        </div>
+                        <span class="flight-card__date">2026年4月3日 週五</span>
+                    </div>
+                </div>
+
+                <div class="flight-card">
+                    <div class="flight-card__icon">🛬</div>
+                    <div class="flight-card__content">
+                        <h3 class="flight-card__title">回程 · UO625</h3>
+                        <div class="flight-card__route">
+                            <div class="flight-card__point">
+                                <span class="flight-card__time">06:35</span>
+                                <span class="flight-card__airport">羽田 HND</span>
+                            </div>
+                            <div class="flight-card__arrow">→</div>
+                            <div class="flight-card__point">
+                                <span class="flight-card__time">10:15</span>
+                                <span class="flight-card__airport">香港 HKG</span>
+                            </div>
+                        </div>
+                        <span class="flight-card__date">2026年4月7日 週二</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--==================== HOTEL INFO ====================-->
+    <section class="section hotel-section">
+        <div class="container">
+            <h2 class="section__title section__title--travel">🏨 酒店資訊</h2>
+            
+            <div class="hotel-cards">
+                <div class="hotel-card">
+                    <div class="hotel-card__image">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400" alt="Hotel">
+                    </div>
+                    <div class="hotel-card__content">
+                        <div class="hotel-card__badge">3 晚</div>
+                        <h3 class="hotel-card__name">京王布萊索酒店 九段下</h3>
+                        <p class="hotel-card__address">📍 〒102-0073 東京都千代田区九段北1-7-1</p>
+                        <div class="hotel-card__features">
+                            <span class="feature">🚇 九段下站</span>
+                            <span class="feature">🏯 皇居步行距離</span>
+                            <span class="feature">🌸 千鳥淵附近</span>
+                        </div>
+                        <span class="hotel-card__dates">4/3 - 4/6</span>
+                    </div>
+                </div>
+
+                <div class="hotel-card">
+                    <div class="hotel-card__image">
+                        <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400" alt="Airport Hotel">
+                    </div>
+                    <div class="hotel-card__content">
+                        <div class="hotel-card__badge hotel-card__badge--accent">1 晚</div>
+                        <h3 class="hotel-card__name">羽田機場區域酒店</h3>
+                        <p class="hotel-card__address">📍 〒144-0043 東京都大田区羽田5-5-14</p>
+                        <div class="hotel-card__features">
+                            <span class="feature">✈️ 機場附近</span>
+                            <span class="feature">🚌 接駁巴士</span>
+                            <span class="feature">⏰ 早班機方便</span>
+                        </div>
+                        <span class="hotel-card__dates">4/6 - 4/7</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--==================== ITINERARY ====================-->
+    <section class="timeline section">
+        <div class="container">
+            <h2 class="section__title section__title--travel">🗓️ 行程規劃</h2>
+            
+            <div class="timeline__list">
+                <!-- Day 1 -->
+                <div class="timeline__item">
+                    <div class="timeline__marker timeline__marker--sakura">
+                        <span>3</span>
+                    </div>
+                    <div class="timeline__content">
+                        <h3 class="timeline__title">Day 1 · 抵達與入住</h3>
+                        <p class="timeline__text">
+                            下午從香港出發，晚上抵達成田機場。搭乘交通工具前往九段下酒店入住。
+                        </p>
+                        <div class="timeline__tips">
+                            <strong>💡 提示：</strong>成田到市區約需1-1.5小時，建議在機場購買 Suica/Pasmo 卡
+                        </div>
+                        <div class="timeline__tags">
+                            <span class="tag tag--sakura">✈️ 成田機場</span>
+                            <span class="tag tag--sakura">🏨 九段下</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 2 -->
+                <div class="timeline__item">
+                    <div class="timeline__marker timeline__marker--sakura">
+                        <span>4</span>
+                        <i class="uil uil-flower"></i>
+                    </div>
+                    <div class="timeline__content timeline__content--featured">
+                        <h3 class="timeline__title">🌸 Day 2 · 上野賞櫻日</h3>
+                        <p class="timeline__text">
+                            上午前往上野恩賜公園，欣賞東京最著名的賞櫻名所。下午參觀東京國立博物館，逛阿美橫丁傳統商店街。
+                        </p>
+                        <div class="timeline__highlight">
+                            <strong>🌸 重點：</strong>上野公園是東京第一賞櫻名所，4月初正值滿開！
+                        </div>
+                        
+                        <div class="timeline__gallery">
+                            <img src="https://images.unsplash.com/photo-1522383225653-ed111181a951?w=400" alt="Sakura">
+                            <img src="https://images.unsplash.com/photo-1542640244-7e67286feb8f?w=400" alt="Ueno">
+                        </div>
+                        <div class="timeline__tags">
+                            <span class="tag tag--sakura">🌸 上野公園</span>
+                            <span class="tag tag--sakura">🏛️ 國立博物館</span>
+                            <span class="tag tag--sakura">🛍️ 阿美橫丁</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 3 -->
+                <div class="timeline__item">
+                    <div class="timeline__marker timeline__marker--sakura">
+                        <span>5</span>
+                        <i class="uil uil-flower"></i>
+                    </div>
+                    <div class="timeline__content timeline__content--featured">
+                        <h3 class="timeline__title">🌸 Day 3 · 新宿深度遊</h3>
+                        <p class="timeline__text">
+                            上午逛新宿御苑欣賞多品種櫻花，中午在敘敘苑享用燒肉午餐。下午探索新宿商圈，晚上體驗思い出橫丁小酒館街的夜生活。
+                        </p>
+                        <div class="timeline__highlight">
+                            <strong>🍜 推薦：</strong>思い出橫丁的狹窄小酒館街，氛圍獨特！
+                        </div>
+                        
+                        <div class="timeline__tags">
+                            <span class="tag tag--sakura">🌸 新宿御苑</span>
+                            <span class="tag tag--sakura">🍖 敘敘苑</span>
+                            <span class="tag tag--sakura">🍻 思い出橫丁</span>
+                            <span class="tag tag--sakura">🌃 東京都廳展望台</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 4 -->
+                <div class="timeline__item">
+                    <div class="timeline__marker timeline__marker--sakura">
+                        <span>6</span>
+                    </div>
+                    <div class="timeline__content">
+                        <h3 class="timeline__title">Day 4 · 橫濱一日遊</h3>
+                        <p class="timeline__text">
+                            早上從九段下退房，前往橫濱一日遊。逛港未來21區、紅磚倉庫，在中華街享用午餐。傍晚入住羽田機場酒店，方便明天早班機。
+                        </p>
+                        <div class="timeline__tips">
+                            <strong>💡 提示：</strong>東京到橫濱約30分鐘，當天來回輕鬆
+                        </div>
+                        
+                        <div class="timeline__tags">
+                            <span class="tag tag--sakura">🌊 港未來21</span>
+                            <span class="tag tag--sakura">🏭 紅磚倉庫</span>
+                            <span class="tag tag--sakura">🥟 中華街</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 5 -->
+                <div class="timeline__item">
+                    <div class="timeline__marker timeline__marker--sakura">
+                        <span>7</span>
+                    </div>
+                    <div class="timeline__content">
+                        <h3 class="timeline__title">Day 5 · 回程</h3>
+                        <p class="timeline__text">
+                            清晨04:00起床，06:35從羽田機場起飛，10:15回到香港。結束美好的櫻花之旅！
+                        </p>
+                        <div class="timeline__warning">
+                            <strong>⚠️ 提醒：</strong>早班機需提早2小時報到，建議04:00就要起床！
+                        </div>
+                        
+                        <div class="timeline__tags">
+                            <span class="tag tag--sakura">✈️ 羽田機場</span>
+                            <span class="tag tag--sakura">🏠 香港</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--==================== MAP ====================-->
+    <section class="section trip-map-section">
+        <div class="container">
+            <h2 class="section__title section__title--travel">🗺️ 行程地圖</h2>
+            
+            <div class="trip-map-wrapper">
+                <div id="trip-map" class="trip-map"></div>
+            </div>
+        </div>
+    </section>
+
+    <!--==================== CTA ====================-->
+    <section class="section">
+        <div class="container">
+            <div class="trip-docs">
+                <h3 class="trip-docs__title">📋 相關文件</h3>
+                <div class="trip-docs__list">
+                    <a href="../../Documents/旅行/03042026/東京賞櫻之旅-完整行程.pdf" class="trip-doc" target="_blank">
+                        <i class="uil uil-file-alt"></i>
+                        <span>完整行程 PDF</span>
+                    </a>
+                    <a href="../../Documents/旅行/03042026/東京賞櫻之旅-行程地圖.html" class="trip-doc" target="_blank">
+                        <i class="uil uil-map"></i>
+                        <span>互動地圖</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer footer-travel">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <a href="../" class="footer__link">
+                    <i class="uil uil-arrow-left"></i> 返回旅行總覽
+                </a>
+                <p class="footer__copy">&#169; 2026 Siu Chun Kit. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!--==================== SCRIPTS ====================-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script src="js/trip-2026.js"></script>
+</body>
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="旅行回顧 - 探索東京的冬日與櫻花之美">
+    <meta name="keywords" content="旅行, 東京, 日本, 櫻花, 攝影, 回憶">
+    
+    <title>旅行回顧 | Travel Journal</title>
+    
+    <!--==================== UNICONS ====================-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    
+    <!--==================== LEAFLET CSS ====================-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+    
+    <!--==================== TRAVEL CSS ====================-->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="css/travel.css">
+    
+    <!--==================== GOOGLE FONTS ====================-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body class="travel-page">
+    <!--==================== ALGORITHMIC ART BACKGROUND ====================-->
+    <canvas id="art-background" class="art-background"></canvas>
+    
+    <!--==================== HEADER ====================-->
+    <header class="header header-travel" id="header">
+        <nav class="nav container">
+            <a href="../index.html" class="nav__logo nav__logo--travel">
+                <i class="uil uil-arrow-left"></i> BACK TO PORTFOLIO
+            </a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link nav__link--travel">
+                            <i class="uil uil-estate nav__icon"></i>首頁
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#trips" class="nav__link nav__link--travel">
+                            <i class="uil uil-map-marker nav__icon"></i>旅程
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#map" class="nav__link nav__link--travel">
+                            <i class="uil uil-location-point nav__icon"></i>地圖
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#gallery" class="nav__link nav__link--travel">
+                            <i class="uil uil-images nav__icon"></i>相簿
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+            <div class="nav__btns">
+                <i class="uil uil-moon change-theme" id="theme-button"></i>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+        <!--==================== HERO SECTION ====================-->
+        <section class="travel-hero section" id="home">
+            <div class="travel-hero__container container grid">
+                <div class="travel-hero__content">
+                    <span class="travel-hero__subtitle">
+                        <i class="uil uil-plane-departure"></i> 
+                        探索世界，收藏回憶
+                    </span>
+                    <h1 class="travel-hero__title">
+                        旅行<br>
+                        <span class="travel-hero__title-accent">回顧</span>
+                    </h1>
+                    <p class="travel-hero__description">
+                        從東京的冬日燈火到春日櫻花，<br>
+                        記錄每一次旅程的感動與發現。
+                    </p>
+                    <div class="travel-hero__stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="2">0</span>
+                            <span class="stat-label">次旅程</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="14">0</span>
+                            <span class="stat-label">天探索</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="72">0</span>
+                            <span class="stat-label">個足跡</span>
+                        </div>
+                    </div>
+                    <a href="#trips" class="button button--flex travel-hero__button">
+                        開始探索 <i class="uil uil-arrow-down button__icon"></i>
+                    </a>
+                </div>
+                <div class="travel-hero__img">
+                    <div class="travel-hero__img-wrapper">
+                        <div class="travel-hero__img-bg"></div>
+                        <img src="images/hero-tokyo.jpg" alt="Tokyo Skyline" class="travel-hero__img-main" onerror="this.src='https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600'">
+                    </div>
+                </div>
+            </div>
+            <div class="travel-hero__scroll">
+                <a href="#trips" class="travel-hero__scroll-button button--flex">
+                    <i class="uil uil-mouse-alt travel-hero__scroll-mouse"></i>
+                    <span class="travel-hero__scroll-name">Scroll Down</span>
+                    <i class="uil uil-arrow-down travel-hero__scroll-arrow"></i>
+                </a>
+            </div>
+        </section>
+
+        <!--==================== TRIPS SECTION ====================-->
+        <section class="trips section" id="trips">
+            <h2 class="section__title section__title--travel">旅程日誌</h2>
+            <span class="section__subtitle section__subtitle--travel">我的東京之旅</span>
+
+            <div class="trips__container container grid">
+                <!-- Trip 1: Tokyo Dec 2025 -->
+                <article class="trip-card">
+                    <div class="trip-card__img-wrapper">
+                        <img src="images/tokyo-winter.jpg" alt="Tokyo Winter 2025" class="trip-card__img" onerror="this.src='https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=500'">
+                        <div class="trip-card__overlay">
+                            <span class="trip-card__season">
+                                <i class="uil uil-snowflake"></i> 冬季
+                            </span>
+                        </div>
+                    </div>
+                    <div class="trip-card__content">
+                        <div class="trip-card__header">
+                            <h3 class="trip-card__title">東京聖誕之旅</h3>
+                            <span class="trip-card__date">2025年12月20-28日</span>
+                        </div>
+                        <p class="trip-card__description">
+                            九天的東京冬日探索，從淺草的傳統街區到台場的未來感夜景，
+                            體驗了晴空塔的壯觀、澀谷的繁華，以及聖誕夜的特別氛圍。
+                        </p>
+                        <div class="trip-card__tags">
+                            <span class="trip-tag">#晴空塔</span>
+                            <span class="trip-tag">#淺草</span>
+                            <span class="trip-tag">#台場</span>
+                            <span class="trip-tag">#澀谷</span>
+                            <span class="trip-tag">#聖誕</span>
+                        </div>
+                        <div class="trip-card__footer">
+                            <div class="trip-card__stats">
+                                <span><i class="uil uil-calendar-alt"></i> 9天</span>
+                                <span><i class="uil uil-map-pin"></i> 8個地點</span>
+                            </div>
+                            <a href="tokyo-2025/" class="trip-card__link">
+                                查看詳情 <i class="uil uil-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Trip 2: Tokyo Apr 2026 -->
+                <article class="trip-card trip-card--featured">
+                    <div class="trip-card__badge">
+                        <i class="uil uil-calendar-alt"></i> 即將到來
+                    </div>
+                    <div class="trip-card__img-wrapper">
+                        <img src="images/tokyo-sakura.jpg" alt="Tokyo Sakura 2026" class="trip-card__img" onerror="this.src='https://images.unsplash.com/photo-1522383225653-ed111181a951?w=500'">
+                        <div class="trip-card__overlay trip-card__overlay--sakura">
+                            <span class="trip-card__season trip-card__season--sakura">
+                                <i class="uil uil-flower"></i> 櫻花季
+                            </span>
+                        </div>
+                    </div>
+                    <div class="trip-card__content">
+                        <div class="trip-card__header">
+                            <h3 class="trip-card__title">東京賞櫻之旅</h3>
+                            <span class="trip-card__date">2026年4月3-7日</span>
+                        </div>
+                        <p class="trip-card__description">
+                            五天的櫻花季之旅，探索上野公園的浪漫花道、新宿御苑的多品種櫻花，
+                            以及橫濱港未來的現代風情。全新的區域，全新的體驗。
+                        </p>
+                        <div class="trip-card__tags">
+                            <span class="trip-tag trip-tag--sakura">#上野公園</span>
+                            <span class="trip-tag trip-tag--sakura">#新宿御苑</span>
+                            <span class="trip-tag trip-tag--sakura">#橫濱</span>
+                            <span class="trip-tag trip-tag--sakura">#櫻花</span>
+                        </div>
+                        <div class="trip-card__footer">
+                            <div class="trip-card__stats">
+                                <span><i class="uil uil-calendar-alt"></i> 5天</span>
+                                <span><i class="uil uil-map-pin"></i> 6個地點</span>
+                            </div>
+                            <a href="tokyo-2026/" class="trip-card__link trip-card__link--featured">
+                                查看規劃 <i class="uil uil-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!--==================== INTERACTIVE MAP SECTION ====================-->
+        <section class="map-section section" id="map">
+            <h2 class="section__title section__title--travel">足跡地圖</h2>
+            <span class="section__subtitle section__subtitle--travel">GPS 軌跡可視化</span>
+
+            <div class="map-section__container container">
+                <div class="map-tabs">
+                    <button class="map-tab map-tab--active" data-trip="tokyo-2025">
+                        <i class="uil uil-snowflake"></i> 2025 冬日
+                    </button>
+                    <button class="map-tab" data-trip="tokyo-2026">
+                        <i class="uil uil-flower"></i> 2026 櫻花
+                    </button>
+                </div>
+                <div class="map-wrapper">
+                    <div id="travel-map" class="travel-map"></div>
+                    <div class="map-overlay">
+                        <div class="map-stats">
+                            <div class="map-stat">
+                                <i class="uil uil-location-point"></i>
+                                <span id="map-points">72</span> 個 GPS 點
+                            </div>
+                            <div class="map-stat">
+                                <i class="uil uil-route"></i>
+                                <span id="map-distance">~3,000</span> km
+                            </div>
+                            <div class="map-stat">
+                                <i class="uil uil-calendar-alt"></i>
+                                <span id="map-days">14</span> 天
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-locations">
+                    <h4 class="map-locations__title">
+                        <i class="uil uil-map-marker-info"></i> 
+                        <span id="locations-title">2025年12月訪問地點</span>
+                    </h4>
+                    <div class="map-locations__grid" id="locations-grid">
+                        <!-- Locations will be populated by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== GALLERY SECTION ====================-->
+        <section class="gallery-section section" id="gallery">
+            <h2 class="section__title section__title--travel">旅程相簿</h2>
+            <span class="section__subtitle section__subtitle--travel">精選瞬間</span>
+
+            <div class="gallery__container container">
+                <div class="gallery__filter">
+                    <button class="gallery__filter-btn gallery__filter-btn--active" data-filter="all">
+                        全部
+                    </button>
+                    <button class="gallery__filter-btn" data-filter="tokyo-2025">
+                        2025 冬日
+                    </button>
+                    <button class="gallery__filter-btn" data-filter="tokyo-2026">
+                        2026 櫻花
+                    </button>
+                </div>
+                
+                <div class="gallery__grid">
+                    <div class="gallery__item gallery__item--large" data-category="tokyo-2025">
+                        <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800" alt="Tokyo Tower Night" class="gallery__img">
+                        <div class="gallery__overlay">
+                            <span class="gallery__title">東京鐵塔夜景</span>
+                            <span class="gallery__date">2025.12</span>
+                        </div>
+                    </div>
+                    <div class="gallery__item" data-category="tokyo-2025">
+                        <img src="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?w=400" alt="Senso-ji Temple" class="gallery__img">
+                        <div class="gallery__overlay">
+                            <span class="gallery__title">淺草寺</span>
+                        </div>
+                    </div>
+                    <div class="gallery__item" data-category="tokyo-2025">
+                        <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=400" alt="Shibuya Crossing" class="gallery__img">
+                        <div class="gallery__overlay">
+                            <span class="gallery__title">澀谷十字路口</span>
+                        </div>
+                    </div>
+                    <div class="gallery__item gallery__item--tall" data-category="tokyo-2026">
+                        <img src="https://images.unsplash.com/photo-1522383225653-ed111181a951?w=400" alt="Cherry Blossoms" class="gallery__img">
+                        <div class="gallery__overlay">
+                            <span class="gallery__title">上野櫻花</span>
+                            <span class="gallery__date">即將到來</span>
+                        </div>
+                    </div>
+                    <div class="gallery__item" data-category="tokyo-2026">
+                        <img src="https://images.unsplash.com/photo-1542640244-7e67286feb8f?w=400" alt="Yokohama" class="gallery__img">
+                        <div class="gallery__overlay">
+                            <span class="gallery__title">橫濱港未來</span>
+                            <span class="gallery__date">即將到來</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== CTA SECTION ====================-->
+        <section class="travel-cta section">
+            <div class="travel-cta__container container">
+                <div class="travel-cta__content">
+                    <h2 class="travel-cta__title">準備好開始您的旅程了嗎？</h2>
+                    <p class="travel-cta__description">
+                        每一次旅行都是一段獨特的故事，<br>
+                        讓我們一起探索這個美麗的世界。
+                    </p>
+                    <div class="travel-cta__buttons">
+                        <a href="mailto:singitsck@gmail.com" class="button button--flex">
+                            <i class="uil uil-envelope button__icon"></i> 聯絡我
+                        </a>
+                        <a href="../index.html#portfolio" class="button button--flex button--ghost">
+                            <i class="uil uil-briefcase button__icon"></i> 查看作品
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer footer-travel">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <a href="../index.html" class="footer__link">
+                        <i class="uil uil-arrow-left"></i> 返回 Portfolio
+                    </a>
+                    <p class="footer__copy">
+                        &#169; 2026 Siu Chun Kit. All rights reserved.
+                    </p>
+                </div>
+                <div class="footer__socials">
+                    <a href="https://github.com/singitsck" target="_blank" class="footer__social">
+                        <i class="uil uil-github-alt"></i>
+                    </a>
+                    <a href="mailto:singitsck@gmail.com" class="footer__social">
+                        <i class="uil uil-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="#" class="scrollup scrollup-travel" id="scroll-up">
+        <i class="uil uil-arrow-up scrollup__icon"></i>
+    </a>
+
+    <!--==================== LEAFLET JS ====================-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    
+    <!--==================== MAIN JS ====================-->
+    <script src="../js/main.js"></script>
+    <script src="js/travel.js"></script>
+    <script src="js/art-background.js"></script>
+</body>
+</html>

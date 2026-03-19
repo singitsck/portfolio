@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="東京聖誕之旅 2025 - 九天的冬日探索">
+    <title>東京聖誕之旅 2025 | Travel Journal</title>
+    
+    <!--==================== UNICONS ====================-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    
+    <!--==================== LEAFLET CSS ====================-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+    
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../css/travel.css">
+    <link rel="stylesheet" href="css/trip-detail.css">
+    
+    <!--==================== GOOGLE FONTS ====================-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body class="trip-page">
+    <!--==================== HEADER ====================-->
+    <header class="header header-travel" id="header">
+        <nav class="nav container">
+            <a href="../" class="nav__logo nav__logo--travel">
+                <i class="uil uil-arrow-left"></i> BACK TO TRAVEL
+            </a>
+            <div class="nav__btns">
+                <i class="uil uil-moon change-theme" id="theme-button"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!--==================== HERO ====================-->
+    <section class="trip-hero">
+        <div class="trip-hero__bg">
+            <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=1920" alt="Tokyo Winter">
+            <div class="trip-hero__overlay"></div>
+        </div>
+        <div class="trip-hero__content">
+            <span class="trip-hero__season"><i class="uil uil-snowflake"></i> 冬季</span>
+            <h1 class="trip-hero__title">東京聖誕之旅</h1>
+            <span class="trip-hero__date">2025年12月20-28日 · 9天</span>
+            <p class="trip-hero__desc">從淺草的傳統街區到台場的未來感夜景，體驗東京的冬日魅力</p>
+        </div>
+    </section>
+
+    <!--==================== TIMELINE ====================-->
+    <section class="timeline section">
+        <div class="container">
+            <h2 class="section__title section__title--travel">行程日誌</h2>
+            
+            <div class="timeline__list">
+                <!-- Day 1 -->
+                <div class="timeline__item">
+                    <div class="timeline__marker">
+                        <span>20</span>
+                    </div>
+                    <div class="timeline__content">
+                        <h3 class="timeline__title">Day 1 · 抵達東京</h3>
+                        <p class="timeline__text">
+                            從香港飛往東京，入住茅場町酒店。晚上在附近探索，感受東京的都市氛圍。
+                        </p>
+                        <div class="timeline__tags">
+                            <span class="tag">✈️ 羽田機場</span>
+                            <span class="tag">🏨 茅場町</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 2-3 -->
+                <div class="timeline__item">
+                    <div class="timeline__marker">
+                        <span>21-22</span>
+                    </div>
+                    <div class="timeline__content">
+                        <h3 class="timeline__title">Day 2-3 · 銀座與台場</h3>
+                        <p class="timeline__text">
+                            逛銀座的高級購物區，欣賞東京鐵塔夜景。第二天前往台場，體驗彩虹大橋和未來感建築。
+                        </p>
+                        <div class="timeline__gallery">
+                            <img src="https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?w=400" alt="Tokyo Tower">
+                            <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=400" alt="Ginza">
+                        </div>
+                        <div class="timeline__tags">
+                            <span class="tag">🗼 東京鐵塔</span>
+                            <span class="tag">🏙️ 銀座</span>
+                            <span class="tag">🌈 台場</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 4 -->
+                <div class="timeline__item">
+                    <div class="timeline__marker">
+                        <span>23</span>
+                    </div>
+                    <div class="timeline__content">
+                        <h3 class="timeline__title">Day 4 · 淺草與晴空塔</h3>
+                        <p class="timeline__text">
+                            上午逛淺草寺和仲見世通，下午登上晴空塔，俯瞰整個東京市景。
+                        </p>
+                        <div class="timeline__tags">
+                            <span class="tag">⛩️ 淺草寺</span>
+                            <span class="tag">🗼 晴空塔</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 5-6 -->
+                <div class="timeline__item">
+                    <div class="timeline__marker timeline__marker--christmas">
+                        <span>24-25</span>
+                        <i class="uil uil-gift"></i>
+                    </div>
+                    <div class="timeline__content timeline__content--featured">
+                        <h3 class="timeline__title">🎄 聖誕特別行程 · 澀谷與表參道</h3>
+                        <p class="timeline__text">
+                            平安夜在台場欣賞燈光秀，聖誕節逛澀谷十字路口和表參道，體驗東京的節日氛圍。
+                        </p>
+                        <div class="timeline__tags">
+                            <span class="tag tag--christmas">🎄 聖誕節</span>
+                            <span class="tag">🎌 澀谷</span>
+                            <span class="tag">🛍️ 表參道</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Day 7-9 -->
+                <div class="timeline__item">
+                    <div class="timeline__marker">
+                        <span>26-28</span>
+                    </div>
+                    <div class="timeline__content">
+                        <h3 class="timeline__title">Day 7-9 · 最後的探索與回程</h3>
+                        <p class="timeline__text">
+                            參觀明治神宮，逛原宿的潮流店舖，最後在築地品嘗新鮮海鮮，結束美好的東京之旅。
+                        </p>
+                        <div class="timeline__tags">
+                            <span class="tag">⛩️ 明治神宮</span>
+                            <span class="tag">🎌 原宿</span>
+                            <span class="tag">🐟 築地市場</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--==================== MAP ====================-->
+    <section class="section trip-map-section">
+        <div class="container">
+            <h2 class="section__title section__title--travel">GPS 軌跡</h2>
+            
+            <div class="trip-map-wrapper">
+                <div id="trip-map" class="trip-map"></div>
+            </div>
+            
+            <div class="trip-stats">
+                <div class="trip-stat">
+                    <i class="uil uil-location-point"></i>
+                    <span class="trip-stat__number">72</span>
+                    <span class="trip-stat__label">GPS 點</span>
+                </div>
+                <div class="trip-stat">
+                    <i class="uil uil-route"></i>
+                    <span class="trip-stat__number">~3,000</span>
+                    <span class="trip-stat__label">公里</span>
+                </div>
+                <div class="trip-stat">
+                    <i class="uil uil-map-pin"></i>
+                    <span class="trip-stat__number">8</span>
+                    <span class="trip-stat__label">地點</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer footer-travel">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <a href="../" class="footer__link">
+                    <i class="uil uil-arrow-left"></i> 返回旅行總覽
+                </a>
+                <p class="footer__copy">&#169; 2026 Siu Chun Kit. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!--==================== SCRIPTS ====================-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+    <script src="js/trip-2025.js"></script>
+</body>
+</html>
